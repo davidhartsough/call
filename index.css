@@ -13,13 +13,163 @@ html {
   font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
     "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  height: 100%;
 }
 body {
+  height: 100%;
+  overflow: hidden;
+  position: relative;
   margin: 0;
   line-height: inherit;
-  padding: 1rem;
+  background-color: #121212;
+  /* linear-gradient(to top, #00000033, #00000003), */
+  background-image: radial-gradient(
+      circle at center,
+      #00000022,
+      #00000044,
+      #000000aa
+    ),
+    linear-gradient(to top right, #f0f, #a0f, #05f, #0fa);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main {
+  padding: 2rem 1rem;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+#bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 0;
+  overflow: hidden;
+  border: 0.25rem double #ffffff1a;
+  border-radius: 9999px;
+  width: 110vw;
+  height: 110vw;
+  background-image: linear-gradient(to bottom, #ffffff1a, #3377991a, #4755690d);
+  transform: translate(-50%, -50%);
+}
+@media (min-width: 40rem) {
+  #bg {
+    width: 90vw;
+    height: 90vw;
+  }
+}
+p {
+  margin: 1rem 0;
+}
+section {
+  text-align: center;
+}
+#msg {
+  font-size: 2rem;
+  font-weight: 300;
+}
+#call-number {
+  font-weight: 500;
+  line-height: 2rem;
 }
 audio {
+  display: none;
+  margin: 0;
+}
+svg {
   display: block;
-  margin: 1rem 0;
+  width: 1.5rem;
+  height: 1.5rem;
+  margin: 0 auto;
+}
+button {
+  display: block;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1.15;
+  letter-spacing: 0.025rem;
+  border-width: 1px;
+  border-style: solid;
+  outline: none;
+  text-decoration: none;
+  user-select: none;
+  width: 3rem;
+  height: 3rem;
+  margin: 1rem auto;
+  color: #e6e6e6;
+  border-color: #e6e6e6;
+  background-color: #121a1a44;
+  border-radius: 2rem;
+  padding: 0.5rem;
+  transition: all 0.1s;
+  text-align: center;
+}
+button:hover,
+button:focus {
+  color: #fff;
+  border-color: #fff;
+  background-color: #272a2a;
+  transform: scale(1.04);
+}
+
+#loader {
+  margin: 0 auto;
+  border-bottom: 0.25rem solid #ffffffcc;
+  border-right: 0.25rem solid #ffffffaa;
+  border-top: 0.25rem solid #ffffff77;
+  border-left: 0.25rem solid #ffffff44;
+  border-radius: 50%;
+  width: 4rem;
+  height: 4rem;
+  transition: all 0.1s;
+  animation: breathe 8s linear infinite, flicker 4s linear infinite;
+}
+@keyframes breathe {
+  0% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(0.9) rotate(180deg);
+    opacity: 0.9;
+  }
+  100% {
+    transform: scale(1) rotate(360deg);
+    opacity: 1;
+  }
+}
+@keyframes flicker {
+  0% {
+    border-bottom-color: #ffffffcc;
+    border-right-color: #ffffffaa;
+    border-top-color: #ffffff77;
+    border-left-color: #ffffff44;
+  }
+  25% {
+    border-right-color: #ffffffee;
+    border-bottom-color: #ffffffcc;
+    border-top-color: #ffffff77;
+    border-left-color: #ffffff44;
+  }
+  50% {
+    border-top-color: #ffffffee;
+    border-bottom-color: #ffffffcc;
+    border-right-color: #ffffffaa;
+    border-left-color: #ffffff44;
+  }
+  75% {
+    border-left-color: #ffffffee;
+    border-bottom-color: #ffffffcc;
+    border-right-color: #ffffffaa;
+    border-top-color: #ffffff77;
+  }
+  100% {
+    border-bottom-color: #ffffffee;
+    border-right-color: #ffffffaa;
+    border-top-color: #ffffff77;
+    border-left-color: #ffffff44;
+  }
 }
