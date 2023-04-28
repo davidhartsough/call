@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "ts": "tsc",
-    "build": "rollup -c"
+    "build": "rollup -c",
+    "deploy": "firebase deploy --only hosting"
   },
   "author": "davidhartsough",
   "license": "ISC",
@@ -20,6 +20,7 @@
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-n": "^15.7.0",
     "eslint-plugin-promise": "^6.1.1",
+    "firebase-tools": "^11.29.1",
     "prettier": "^2.8.8",
     "rollup": "^3.21.0",
     "tslib": "^2.5.0",
