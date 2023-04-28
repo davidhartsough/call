@@ -4,17 +4,59 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Audio Voice Call Thing</title>
-    <link rel="stylesheet" href="./index.css" />
-    <script src="https://unpkg.com/peerjs@1.4.7/dist/peerjs.min.js"></script>
+    <title>Call Me Up</title>
+    <link rel="stylesheet" href="../index.css" />
+    <link rel="stylesheet" href="../loader.css" />
   </head>
   <body>
     <div id="bg"></div>
+    <div id="loader"></div>
     <main>
       <section>
-        <p id="msg">Connecting...</p>
+        <h2 id="msg">Waiting...</h2>
         <div class="center">
-          <div id="loader" style="display: block"></div>
+          <button id="share">
+            <svg
+              id="share-icon"
+              style="display: block"
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="feather feather-share-2"
+            >
+              <circle cx="18" cy="5" r="3"></circle>
+              <circle cx="6" cy="12" r="3"></circle>
+              <circle cx="18" cy="19" r="3"></circle>
+              <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+              <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+            </svg>
+            <svg
+              id="copy-icon"
+              style="display: none"
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="feather feather-clipboard"
+            >
+              <path
+                d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"
+              ></path>
+              <rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect>
+            </svg>
+          </button>
+
           <button id="mic-toggle" class="on" style="display: none">
             <svg
               id="mic-on"
@@ -63,10 +105,10 @@
             </svg>
           </button>
         </div>
-        <p id="call-number">Call # <span id="call-id"></span></p>
+        <p class="s" id="action">Share the link</p>
       </section>
     </main>
     <audio controls id="remote-audio-stream"></audio>
-    <script src="./index.js" defer></script>
+    <script src="./app.js" type="module"></script>
   </body>
 </html>
